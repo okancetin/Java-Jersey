@@ -106,7 +106,6 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-
 		<!-- .. -->
 
 	</dependencies>
@@ -129,6 +128,8 @@
 		<war.version>1.0.0</war.version>
 		<package>war</package>
 		<!-- .. -->
+		
+		<m2eclipse.wtp.contextRoot>/bass2</m2eclipse.wtp.contextRoot>
 
 	</properties>
 </project>
