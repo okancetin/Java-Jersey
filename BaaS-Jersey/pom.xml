@@ -69,7 +69,6 @@
 			<version>${jersey.version}</version>
 		</dependency>
 		<!-- .. -->
-		<!-- .. -->
 
 		<dependency>
 			<groupId>mysql</groupId>
