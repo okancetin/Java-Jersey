@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>${groupid.name}</groupId>
+	<artifactId>${groupid.name}</artifactId>
+	<version>${war.version}</version>
+	<packaging>${package}</packaging>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<!-- Tomcat deploy -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<configuration>
+					<url>http://127.0.0.1:8080/manager/text</url>
+					<server>TomcatServer</server>
+					<path>/${project.build.finalName}</path>
+					<warDirectory>${project.build.directory}/target/${project.build.finalName}.war</warDirectory>
+				</configuration>
+			</plugin>
+			<!-- .. -->
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<warSourceDirectory>webapp</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>baasapi</warName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- RESTful web service: Jersey -->
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-servlet</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<!-- .. -->
+		<!-- .. -->
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>
+                hibernate-validator-annotation-processor
+            </artifactId>
+			<version>5.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.0.1.Final</version>
+		</dependency>
+
+	</dependencies>
+
+	<properties>
+
+		<!-- Packages Version -->
+		<resteasy.version>3.0.6.Final</resteasy.version>
+		<jersey.version>1.17.1</jersey.version>
+		<java.version>1.7</java.version>
+		<junit.version>4.11</junit.version>
+		<mysql.version>5.1.31</mysql.version>
+		<!-- .. -->
+
+		<!-- Maven Configuration -->
+		<groupid.name>baasapi</groupid.name>
+		<war.version>1.0.0</war.version>
+		<package>war</package>
+		<!-- .. -->
+
+	</properties>
+</project>
