@@ -3,9 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>${groupid.name}</groupId>
-	<artifactId>${groupid.name}</artifactId>
+	<artifactId>${artifactid.name}</artifactId>
 	<version>${war.version}</version>
 	<packaging>${package}</packaging>
+	<description>${description.name}</description>
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -82,18 +83,23 @@
 			<version>${gson.version}</version>
 		</dependency>
 
+		<!-- JPA/Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
-			<artifactId>
-                hibernate-validator-annotation-processor
-            </artifactId>
-			<version>5.0.1.Final</version>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>5.0.1.Final</version>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>${jpa.version}</version>
+		</dependency>
+		<!-- .. -->
 
 		<!-- Logs -->
 		<dependency>
@@ -121,14 +127,18 @@
 		<gson.version>2.2.4</gson.version>
 		<slf4j.version>1.7.7</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+		<jpa.version>1.0.1.Final</jpa.version>
 		<!-- .. -->
 
 		<!-- Maven Configuration -->
-		<groupid.name>baasapi</groupid.name>
+        <groupid.name>com.baas</groupid.name>
+        <artifactid.name>baasapi</artifactid.name>
 		<war.version>1.0.0</war.version>
 		<package>war</package>
+		<description.name>BaaS Service</description.name>
 		<!-- .. -->
-		
+
 		<m2eclipse.wtp.contextRoot>/bass2</m2eclipse.wtp.contextRoot>
 
 	</properties>
