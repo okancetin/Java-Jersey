@@ -132,8 +132,8 @@
 		<!-- .. -->
 
 		<!-- Maven Configuration -->
-        <groupid.name>com.baas</groupid.name>
-        <artifactid.name>baasapi</artifactid.name>
+		<groupid.name>com.baas</groupid.name>
+		<artifactid.name>baasapi</artifactid.name>
 		<war.version>1.0.0</war.version>
 		<package>war</package>
 		<description.name>BaaS Service</description.name>
