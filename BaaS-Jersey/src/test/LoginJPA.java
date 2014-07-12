@@ -14,7 +14,7 @@ public class LoginJPA {
 	public static void main(String[] args) {
 
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("evento");
+				.createEntityManagerFactory("evento-ds");
 		EntityManager em = emf.createEntityManager();
 
 		try {

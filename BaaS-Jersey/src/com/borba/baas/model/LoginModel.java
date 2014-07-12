@@ -29,11 +29,11 @@ public class LoginModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "login_id")
+	@Column(name = "login_id", updatable = false, nullable = false)
 	private Long loginId;
-	@Column(name = "login_name")
+	@Column(name = "login_name", length = 20)
 	private String loginNome;
-	@Column(name = "login_senha", nullable = true)
+	@Column(name = "login_senha", length = 80, nullable = true)
 	private String loginSenha;
 
 	@Override

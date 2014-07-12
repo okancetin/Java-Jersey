@@ -16,7 +16,7 @@ id="WebApp_ID" version="3.0">
 	
 	    <init-param>
 	        <param-name>com.sun.jersey.config.property.packages</param-name>
-	        <param-value>ngdemo.rest</param-value>
+	        <param-value>com.borba.restful.service</param-value>
 	    </init-param>
 	
 	    <init-param>
@@ -33,18 +33,4 @@ id="WebApp_ID" version="3.0">
 	</servlet-mapping>
 	<!-- .. -->
 	   
-<!-- 	
-    <servlet>
-		<servlet-name>jersey-serlvet</servlet-name>
-		<servlet-class>
-	    	com.sun.jersey.spi.container.servlet.ServletContainer
-		</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>jersey-serlvet</servlet-name>
-		<url-pattern>/*</url-pattern>
-	</servlet-mapping>
- -->	  
 </web-app>
